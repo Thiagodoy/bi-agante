@@ -1,0 +1,137 @@
+/*==========================================================
+                            FONT
+==========================================================*/
+.bold-font {
+    font-weight: bold;
+}
+
+.width-15pcent {
+    width: 200px;
+}
+/*==========================================================
+                        VERIFICAR
+==========================================================*/
+.csstable {
+    font-family: Calibri;
+    font-size: 15px;
+    border: 1px solid #ddd;
+    line-height: 1.42857143;
+    box-sizing: content-box;
+    display: table-cell;
+    border-collapse: separate;
+    border-spacing: 0;  
+}
+.fontCategoryFilter{
+    font-size: 14px;
+}
+.google-menu-vertical {
+    overflow:scroll; 
+    overflow-y: auto;
+    max-height:300px             
+}
+
+/*==========================================================
+        FILTRO CategoryFilter
+==========================================================*/
+/* STYLE GERAL */
+.filters{
+    font-size: 13px;
+    display:inline-flex;
+}
+
+/* STYLE BOTAO SHOW HIDE ITENS FILTRADOS */
+.btn-show-hide-filter{
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+/* STYLE DIV BOTAO SHOW HIDE ITENS FILTRADOS */
+.div-btn-show-hide-filter{
+}
+
+/* STYLE BOTAO DROPDOWN */
+.goog-inline-block .goog-menu-button-outer-box{
+    background-color: #337AB7;
+    color: white;
+    border-radius: 3px;
+    width: 200px;
+    padding: 0px;
+    font-size: 13px;
+}
+.goog-inline-block .goog-menu-button-inner-box{
+    background-color: #337AB7;
+    color: white;
+    border-radius: 3px;
+    width: 200px;
+    text-align: center;
+    font-size: 13px;
+}
+
+/* ICONE DROPDOWN */
+.goog-inline-block .goog-menu-button-dropdown{
+    height: 15px;
+    width: 7px;
+    background: url(../../img/bt_dropdown_padrao.png);
+    vertical-align: top;
+}
+
+/* CSS PARA BARRA DE ROLAGEM */
+.google-menu-vertical{
+    overflow:scroll; 
+    overflow-y: auto;
+    max-height:300px;             
+}
+.goog-menu .goog-menu-vertical{
+    overflow:scroll; 
+    overflow-y: auto;
+    max-height:300px;
+}
+
+/*==========================================================
+        CSS TableChart
+==========================================================*/
+.google-visualization-table-table{
+    font-family: calibri;
+    font-size: 13px;
+}
+.google-visualization-table-tr-head{
+    font-family: calibri;
+    font-size: 13px;
+}
+.google-visualization-table-td{
+    font-family: calibri;
+    font-size: 13px;
+}
+
+#btn-show-hide-filter{
+    height: 25px;
+    margin-top: 3px;
+    margin-right: 2px;
+
+}
+
+#btn-exportar{
+    width:42.082px;
+    
+    margin-bottom: 5px;
+}
+
+#btn-exportar-image{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
