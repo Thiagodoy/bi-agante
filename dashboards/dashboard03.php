@@ -2,8 +2,7 @@
     <script type="text/javascript" src="http://www.google.com/jsapi?.js"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>    
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script type="text/javascript" src="core/js/filter-factory.js"></script> 
-    <script type="text/javascript" src="core/js/formatter-factory.js"></script> 
+    <script type="text/javascript" src="core/js/filter-factory.js"></script>    
     <script type="text/javascript" src="core/loader/loader_dsh03.js"></script> 
     <script type="text/javascript" src="core/loader/loader_dsh03_detalhado.js"></script> 
 

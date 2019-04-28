@@ -2,7 +2,7 @@ function FormatterFactory() {
 
 
     //cria formato paara valor R$
-    const formatter = new google.visualization.NumberFormat({
+    this.formatter = new google.visualization.NumberFormat({
         prefix: 'R$ ',
         fractionDigits: 2,
         decimalSymbol: ',',
@@ -12,7 +12,7 @@ function FormatterFactory() {
     });
 
     //cria formato paara % com casas decimais
-    const formatterPorcentDecimal = new google.visualization.NumberFormat({
+    this.formatterPorcentDecimal = new google.visualization.NumberFormat({
         prefix: '',
         suffix: '%',
         fractionDigits: 2,
@@ -23,18 +23,20 @@ function FormatterFactory() {
     });
 
     //cria frormato Arrow
-    const formatterArrow = new google.visualization.ArrowFormat();
+    this.formatterArrow = new google.visualization.ArrowFormat();
 
 
-    this.formatValue = function(value, column) {
-        formatter.format(value, column);
+    this.getformatValue = () => {
+        return this.formatter;
     };
 
-    this.formatPercentual = function(value, column) {
-        formatterPorcentDecimal.format(value, column);
+    this.getformatPercentual = () => {
+        return this.formatterPorcentDecimal;
     };
 
-    this.formatArrow = function(value, column) {
-        formatterArrow.format(value, column);
+    this.getformatArrow = () => {
+        return this.formatterArrow;
     };
 }
+
+window.formatter = new FormatterFactory();

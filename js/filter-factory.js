@@ -38,7 +38,7 @@ function FilterFactory() {
         let control = new Array();
 
         filters.forEach(filter => {
-            $(container).append(`<div id="${filter.containerId}" class="control" onclick="${filter.functionCallback}"></div>`);
+            $(container).append(`<div id="${filter.containerId}" class="control item-filter"  onclick="${filter.functionCallback}"></div>`);
             control.push(new google.visualization.ControlWrapper(filter));
         });
 

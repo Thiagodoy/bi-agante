@@ -2,7 +2,6 @@
 <script type="text/javascript" src="http://www.google.com/jsapi?.js"></script>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script type="text/javascript" src="core/js/filter-factory.js"></script> 
-<script type="text/javascript" src="core/js/formatter-factory.js"></script>
 <script type="text/javascript" src="core/loader/loader_dsh06.js"></script> 
 <script type="text/javascript" src="core/loader/loader_dsh06_detalhado.js"></script> 
 
