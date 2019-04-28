@@ -46,7 +46,7 @@ function FilterFactory() {
     }
 
     this.dashboard01 = (container) => {
-        let filters = [
+        let fi = [
             { 'controlType': 'CategoryFilter', 'functionCallback': 'AddCss_charts_menu_vertical()', 'containerId': 'categoryPicker_Empresa_div', 'options': { 'filterColumnIndex': 0, 'ui': { 'label': '', 'caption': 'Empresa', 'allowTyping': false, 'allowMultiple': true, 'selectedValuesLayout': 'below' } } },
             { 'controlType': 'CategoryFilter', 'functionCallback': 'AddCss_charts_menu_vertical()', 'containerId': 'categoryPicker_Estabelecimento_div', 'options': { 'filterColumnIndex': 1, 'ui': { 'label': '', 'caption': 'Estabelecimento', 'allowTyping': false, 'allowMultiple': true, 'selectedValuesLayout': 'below' } } },
             { 'controlType': 'CategoryFilter', 'functionCallback': 'AddCss_charts_menu_vertical()', 'containerId': 'categoryPicker_Unidade_negocio_div', 'options': { 'filterColumnIndex': 2, 'ui': { 'label': '', 'caption': 'Uni. Negócio', 'allowTyping': false, 'allowMultiple': true, 'selectedValuesLayout': 'below' } } },
@@ -55,33 +55,33 @@ function FilterFactory() {
             { 'controlType': 'CategoryFilter', 'functionCallback': 'AddCss_charts_menu_vertical()', 'containerId': 'categoryPicker_div', 'options': { 'filterColumnIndex': 6, 'ui': { 'label': '', 'caption': 'Evento', 'allowTyping': false, 'allowMultiple': true, 'selectedValuesLayout': 'below' } } }
         ];
 
-        let filters = this.buildContainerHtml(filters, container);
-        let lastIndexFilter = this.getLastFilterByIndex(filters);
+        let filters = this.buildContainerHtml(fi, container);
+        let lastIndexFilter = this.getLastFilterByIndex(fi);
         return { filters, lastIndexFilter };
     }
 
     this.dashboard02 = (container) => {
 
-        let filters = [
+        let fi = [
             { 'controlType': 'CategoryFilter', 'functionCallback': 'AddCss_charts_menu_vertical()', 'containerId': 'categoryPicker_Estabelecimento_div', 'options': { 'filterColumnIndex': 1, 'ui': { 'label': '', 'caption': 'Filtro Estabelecimento', 'allowTyping': false, 'allowMultiple': true, 'selectedValuesLayout': 'below' } } },
             { 'controlType': 'CategoryFilter', 'functionCallback': 'AddCss_charts_menu_vertical()', 'containerId': 'categoryPicker_Empresa_div', 'options': { 'filterColumnIndex': 0, 'ui': { 'label': '', 'caption': 'Filtro Empresa', 'allowTyping': false, 'allowMultiple': true, 'selectedValuesLayout': 'below' } } },
             { 'controlType': 'CategoryFilter', 'functionCallback': 'AddCss_charts_menu_vertical()', 'containerId': 'categoryPicker_div', 'options': { 'filterColumnIndex': 3, 'ui': { 'label': '', 'caption': 'Filtro Evento', 'allowTyping': false, 'allowMultiple': true, 'selectedValuesLayout': 'below' } } }
         ];
 
-        let filters = this.buildContainerHtml(filters, container);
-        let lastIndexFilter = this.getLastFilterByIndex(filters);
+        let filters = this.buildContainerHtml(fi, container);
+        let lastIndexFilter = this.getLastFilterByIndex(fi);
         return { filters, lastIndexFilter };
     }
 
     this.dashboard03 = (container) => {
-        let filters = [
+        let fi = [
             { 'controlType': 'CategoryFilter', 'functionCallback': 'AddCss_charts_menu_vertical()', 'containerId': 'categoryPicker_div', 'options': { 'filterColumnIndex': 0, 'ui': { 'label': '', 'caption': 'Filtro Evento', 'allowTyping': false, 'allowMultiple': true, 'selectedValuesLayout': 'below' } } },
             { 'controlType': 'CategoryFilter', 'functionCallback': 'AddCss_charts_menu_vertical()', 'containerId': 'categoryPicker_Empresa_div', 'options': { 'filterColumnIndex': 1, 'ui': { 'label': '', 'caption': 'Filtro Empresa', 'allowTyping': false, 'allowMultiple': true, 'selectedValuesLayout': 'below' } } },
             { 'controlType': 'CategoryFilter', 'functionCallback': 'AddCss_charts_menu_vertical()', 'containerId': 'categoryPicker_Estabelecimento_div', 'options': { 'filterColumnIndex': 2, 'ui': { 'label': '', 'caption': 'Filtro Estabelecimento', 'allowTyping': false, 'allowMultiple': true, 'selectedValuesLayout': 'below' } } }
         ];
 
-        let filters = this.buildContainerHtml(filters, container);
-        let lastIndexFilter = this.getLastFilterByIndex(filters);
+        let filters = this.buildContainerHtml(fi, container);
+        let lastIndexFilter = this.getLastFilterByIndex(fi);
         return { filters, lastIndexFilter };
     }
 
@@ -90,46 +90,46 @@ function FilterFactory() {
     }
 
     this.dashboard05 = (container) => {
-        let filters = [
+        let fi = [
             { 'controlType': 'CategoryFilter', 'functionCallback': '', 'containerId': 'categoryPicker_div', 'options': { 'filterColumnIndex': 3, 'ui': { 'label': '', 'caption': 'Filtro Evento', 'allowTyping': false, 'allowMultiple': true, 'selectedValuesLayout': 'below' } } },
             { 'controlType': 'CategoryFilter', 'functionCallback': '', 'containerId': 'categoryPicker_Empresa_div', 'options': { 'filterColumnIndex': 0, 'ui': { 'label': '', 'caption': 'Filtro Empresa', 'allowTyping': false, 'allowMultiple': true, 'selectedValuesLayout': 'below' } } },
             { 'controlType': 'CategoryFilter', 'functionCallback': '', 'containerId': 'categoryPicker_Estabelecimento_div', 'options': { 'filterColumnIndex': 1, 'ui': { 'label': '', 'caption': 'Filtro Estabelecimento', 'allowTyping': false, 'allowMultiple': true, 'selectedValuesLayout': 'below' } } }
         ];
-        let filters = this.buildContainerHtml(filters, container);
-        let lastIndexFilter = this.getLastFilterByIndex(filters);
+        let filters = this.buildContainerHtml(fi, container);
+        let lastIndexFilter = this.getLastFilterByIndex(fi);
         return { filters, lastIndexFilter };
     }
 
     this.dashboard06 = (container) => {
-        let filters = [
+        let fi = [
             { 'controlType': 'CategoryFilter', 'functionCallback': '', 'containerId': 'categoryPicker_div', 'options': { 'filterColumnIndex': 3, 'ui': { 'label': '', 'caption': 'Filtro Evento', 'allowTyping': false, 'allowMultiple': true, 'selectedValuesLayout': 'below' } } },
             { 'controlType': 'CategoryFilter', 'functionCallback': '', 'containerId': 'categoryPicker_Empresa_div', 'options': { 'filterColumnIndex': 0, 'ui': { 'label': '', 'caption': 'Filtro Empresa', 'allowTyping': false, 'allowMultiple': true, 'selectedValuesLayout': 'below' } } },
             { 'controlType': 'CategoryFilter', 'functionCallback': '', 'containerId': 'categoryPicker_Estabelecimento_div', 'options': { 'filterColumnIndex': 1, 'ui': { 'label': '', 'caption': 'Filtro Estabelecimento', 'allowTyping': false, 'allowMultiple': true, 'selectedValuesLayout': 'below' } } }
         ];
-        let filters = this.buildContainerHtml(filters, container);
-        let lastIndexFilter = this.getLastFilterByIndex(filters);
+        let filters = this.buildContainerHtml(fi, container);
+        let lastIndexFilter = this.getLastFilterByIndex(fi);
         return { filters, lastIndexFilter };
     }
 
     this.dashboard07 = (container) => {
-        let filters = [
+        let fi = [
             { 'controlType': 'CategoryFilter', 'functionCallback': '', 'containerId': 'categoryPicker_div', 'options': { 'filterColumnIndex': 3, 'ui': { 'label': '', 'caption': 'Filtro Evento', 'allowTyping': false, 'allowMultiple': true, 'selectedValuesLayout': 'below' } } },
             { 'controlType': 'CategoryFilter', 'functionCallback': '', 'containerId': 'categoryPicker_Empresa_div', 'options': { 'filterColumnIndex': 0, 'ui': { 'label': '', 'caption': 'Filtro Empresa', 'allowTyping': false, 'allowMultiple': true, 'selectedValuesLayout': 'below' } } },
             { 'controlType': 'CategoryFilter', 'functionCallback': '', 'containerId': 'categoryPicker_Estabelecimento_div', 'options': { 'filterColumnIndex': 1, 'ui': { 'label': '', 'caption': 'Filtro Estabelecimento', 'allowTyping': false, 'allowMultiple': true, 'selectedValuesLayout': 'below' } } }
         ];
-        let filters = this.buildContainerHtml(filters, container);
-        let lastIndexFilter = this.getLastFilterByIndex(filters);
+        let filters = this.buildContainerHtml(fi, container);
+        let lastIndexFilter = this.getLastFilterByIndex(fi);
         return { filters, lastIndexFilter };
     }
 
     this.dashboard08 = (container) => {
-        let filters = [
+        let fi = [
             { 'controlType': 'CategoryFilter', 'functionCallback': '', 'containerId': 'categoryPicker_div', 'options': { 'filterColumnIndex': 3, 'ui': { 'label': '', 'caption': 'Filtro Evento', 'allowTyping': false, 'allowMultiple': true, 'selectedValuesLayout': 'below' } } },
             { 'controlType': 'CategoryFilter', 'functionCallback': '', 'containerId': 'categoryPicker_Empresa_div', 'options': { 'filterColumnIndex': 0, 'ui': { 'label': '', 'caption': 'Filtro Empresa', 'allowTyping': false, 'allowMultiple': true, 'selectedValuesLayout': 'below' } } },
             { 'controlType': 'CategoryFilter', 'functionCallback': '', 'containerId': 'categoryPicker_Estabelecimento_div', 'options': { 'filterColumnIndex': 1, 'ui': { 'label': '', 'caption': 'Filtro Estabelecimento', 'allowTyping': false, 'allowMultiple': true, 'selectedValuesLayout': 'below' } } }
         ];
-        let filters = this.buildContainerHtml(filters, container);
-        let lastIndexFilter = this.getLastFilterByIndex(filters);
+        let filters = this.buildContainerHtml(fi, container);
+        let lastIndexFilter = this.getLastFilterByIndex(fi);
         return { filters, lastIndexFilter };
     }
 };
