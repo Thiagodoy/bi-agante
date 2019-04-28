@@ -1,9 +1,11 @@
 <script type="text/javascript" src="http://www.google.com/jsapi?.js"></script>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript" src="core/js/filter-factory.js"></script> 
+<script type="text/javascript" src="core/js/formatter-factory.js"></script>
 <script type="text/javascript" src="core/loader/loader_dsh02.js"></script>
 
-<div class="col-md-12">
-    <table border="0" style="font-size: 13px;">
+<div class="col-md-12"  id="filters-container">
+    <!-- <table border="0" style="font-size: 13px;">
         <tr style="vertical-align: top;">
             <td>
                 <div id="categoryPicker_Empresa_div" onclick="AddCss_charts_menu_vertical();"></div>
@@ -15,7 +17,7 @@
                 <div id="categoryPicker_div" onclick="AddCss_charts_menu_vertical();"></div>
             </td>
         </tr>
-    </table>
+    </table> -->
 </div>
 <div class="col-md-8" style="padding: 0;">
     <div class="col-md-6 col-xs-8">

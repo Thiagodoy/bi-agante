@@ -13,7 +13,7 @@ function drawDashboard() {
         async: false
     }).responseText;
 
-    debugger
+
 
     // Create our data table out of JSON data loaded from server.
     var data = new google.visualization.DataTable(jsonData);
@@ -41,102 +41,6 @@ function drawDashboard() {
 
     //inicia dashboard
     var dashboard = new google.visualization.Dashboard();
-
-    //filtro empresa
-    var categoryPicker_Empresa = new google.visualization.ControlWrapper({
-        'controlType': 'CategoryFilter',
-        'containerId': 'categoryPicker_Empresa_div',
-        'options': {
-            'filterColumnIndex': 0,
-            'ui': {
-                'label': '',
-                'caption': 'Empresa',
-                'allowTyping': false,
-                'allowMultiple': true,
-                'selectedValuesLayout': 'below'
-            }
-        }
-    });
-
-    //filtro estabelecimento
-    var categoryPicker_Estabelecimento = new google.visualization.ControlWrapper({
-        'controlType': 'CategoryFilter',
-        'containerId': 'categoryPicker_Estabelecimento_div',
-        'options': {
-            'filterColumnIndex': 1,
-            'ui': {
-                'label': '',
-                'caption': 'Estabelecimento',
-                'allowTyping': false,
-                'allowMultiple': true,
-                'selectedValuesLayout': 'below'
-            }
-        }
-    });
-
-    //filtro unidade de negociio
-    var categoryPicker_Unidade_negocio = new google.visualization.ControlWrapper({
-        'controlType': 'CategoryFilter',
-        'containerId': 'categoryPicker_Unidade_negocio_div',
-        'options': {
-            'filterColumnIndex': 2,
-            'ui': {
-                'label': '',
-                'caption': 'Uni. Negócio',
-                'allowTyping': false,
-                'allowMultiple': true,
-                'selectedValuesLayout': 'below'
-            }
-        }
-    });
-
-    //filtro timpo mao de obra
-    var categoryPicker_Tipo_mob = new google.visualization.ControlWrapper({
-        'controlType': 'CategoryFilter',
-        'containerId': 'categoryPicker_Tipo_mob_div',
-        'options': {
-            'filterColumnIndex': 3,
-            'ui': {
-                'label': '',
-                'caption': 'Tipo Mão de Obra',
-                'allowTyping': false,
-                'allowMultiple': true,
-                'selectedValuesLayout': 'below'
-            }
-        }
-    });
-
-    //filtro cetro de custo
-    var categoryPicker_Centrodecusto = new google.visualization.ControlWrapper({
-        'controlType': 'CategoryFilter',
-        'containerId': 'categoryPicker_Centrodecusto_div',
-        'options': {
-            'filterColumnIndex': 4,
-            'ui': {
-                'label': '',
-                'caption': 'Centro de Custo',
-                'allowTyping': false,
-                'allowMultiple': true,
-                'selectedValuesLayout': 'below'
-            }
-        }
-    });
-
-    //filtro evento
-    var categoryPicker = new google.visualization.ControlWrapper({
-        'controlType': 'CategoryFilter',
-        'containerId': 'categoryPicker_div',
-        'options': {
-            'filterColumnIndex': 6,
-            'ui': {
-                'label': '',
-                'caption': 'Evento',
-                'allowTyping': false,
-                'allowMultiple': true,
-                'selectedValuesLayout': 'below'
-            }
-        }
-    });
 
 
     //grafico table
@@ -168,10 +72,10 @@ function drawDashboard() {
      * @param {string} dashboard identificado do dashboard
      * @param {string} containerId identificaador onde vai ser renderizado os filtros 
      */
-    let filters = filterFactory.build('dashboard01', '#filters-container');
+    let filter = filterFactory.build('dashboard01', '#filters-container');
 
     //executa o draw nos filtros e graficos declarados
-    dashboard.bind([categoryPicker, categoryPicker_Empresa, categoryPicker_Estabelecimento, categoryPicker_Unidade_negocio, categoryPicker_Tipo_mob, categoryPicker_Centrodecusto], tableChart_geral);
+    dashboard.bind(filter.filters, tableChart_geral);
     dashboard.draw(data);
 
     //INICIA TRATATIVAS DE AGRUPAMENTO

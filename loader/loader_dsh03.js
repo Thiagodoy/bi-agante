@@ -65,11 +65,11 @@ function drawDashboard() {
      * @param {string} dashboard identificado do dashboard
      * @param {string} containerId identificaador onde vai ser renderizado os filtros 
      */
-    let filters = filterFactory.build('dashboard03', '#filters-container');
+    let filter = filterFactory.build('dashboard03', '#filters-container');
 
 
     //executa o draw nos filtros e graficos declarados
-    dashboard.bind(filters, tableChart_geral);
+    dashboard.bind(filter.filters, tableChart_geral);
     dashboard.draw(data);
 
     //INICIA TRATATIVAS DE AGRUPAMENTO
