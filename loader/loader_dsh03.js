@@ -13,7 +13,6 @@ function drawDashboard() {
         async: false
     }).responseText;
 
-    debugger;
     // Create our data table out of JSON data loaded from server.
     var data = new google.visualization.DataTable(jsonData);
 

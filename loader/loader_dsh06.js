@@ -70,9 +70,10 @@ function drawDashboard() {
      * @param {string} dashboard identificado do dashboard
      * @param {string} containerId identificaador onde vai ser renderizado os filtros 
      */
+    debugger;
     let filter = filterFactory.build('dashboard06', '#filters-container');
-
-    //executa o draw nos filtros e graficos declarados
+    console.log('filter', filter)
+        //executa o draw nos filtros e graficos declarados
     dashboard.bind(filter.filters, tableChart_geral);
     dashboard.draw(data);
 
@@ -206,15 +207,16 @@ function drawDashboard() {
             //se foi filtrado algum evento, executa grafico detalhado
             if (empresa_filtrado != '' && estab_filtrado != '') {
                 //verifica se foi filtrado algo em categoryPicker_Empresa
-                var state_FilterEmpresa = categoryPicker_Empresa.getState();
+
+                var state_FilterEmpresa = filter.filters.find(f => f.gv == 'categoryPicker_Empresa_div').getState();
                 state_FilterEmpresa = state_FilterEmpresa.selectedValues;
 
                 //verifica se foi filtrado algo em categoryPicker_Estabelecimento
-                var state_FilterEstabelecimento = categoryPicker_Estabelecimento.getState();
+                var state_FilterEstabelecimento = filter.filters.find(f => f.gv == 'categoryPicker_Estabelecimento_div').getState();
                 state_FilterEstabelecimento = state_FilterEstabelecimento.selectedValues;
 
                 //verifica se foi filtrado algo em categoryPicker que é Evento
-                var state_FilterEvento = categoryPicker.getState();
+                var state_FilterEvento = filter.filters.find(f => f.gv == 'categoryPicker_div').getState();
                 state_FilterEvento = state_FilterEvento.selectedValues;
 
                 //executa função de grafico detalhado
