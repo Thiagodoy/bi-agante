@@ -54,17 +54,13 @@ function drawDashboard() {
     //cria frormato Arrow
     var formatterArrow = new google.visualization.ArrowFormat();
 
-    window.formatterFactory = new FormatterFactory();
-
-
-
     /**
      * @author Thiago Godoy
      * @summary Usa um factory para contruir os filtros de acordo com o dashboard
      * @param {string} dashboard identificado do dashboard
      * @param {string} containerId identificaador onde vai ser renderizado os filtros 
      */
-    let filter = filterFactory.build('dashboard03', '#filters-container');
+    let filter = filterFactory.build('dashboard03');
 
 
     //executa o draw nos filtros e graficos declarados
@@ -85,6 +81,8 @@ function drawDashboard() {
 
 
     // || COLUNAS SEM FILTRO || COLUNAS COM FILTRO || COLUNAS AGRUPAMENTO ||
+    // ||    |1|2|3|4|5|6|   ||     |7|8|9|10|11|  ||   |12|13|14|15|16|  ||
+    // lastIndexFilter => indica a posição do ultimo filtro para iniciarmos 
 
 
     //utiliza a tabela "tableChart_geral" como tabela mãe e cria tabela de agrupamento 
@@ -93,6 +91,7 @@ function drawDashboard() {
 
         //zera vetor antes de entrar no laço
         aggColumns = [];
+        console.log('FFF', filter);
 
         //cria todas as colunas começando da 2 até a ultima
         for (var k = 4; k < data.getNumberOfColumns(); k++) {
