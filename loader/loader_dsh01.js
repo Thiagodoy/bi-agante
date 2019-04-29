@@ -15,6 +15,12 @@ function drawDashboard() {
 
 
 
+    //Parametrizações
+    let indexStartAgrupamento = 4;
+    let indexColunasAgrupamento = [2, 3];
+    let indexCamposATotalizar = 4
+
+
     // Create our data table out of JSON data loaded from server.
     var data = new google.visualization.DataTable(jsonData);
 
@@ -31,7 +37,7 @@ function drawDashboard() {
         //zera variavel parcial antes de entrar no for
         var totLinhaParcial = 0;
         //passando pelas colunas começando da coluna 8 (zero é a primeira) só nao pega a coluna do totalizador
-        for (var k = 7; k < positioColumTot; k++) {
+        for (var k = indexCamposATotalizar; k < positioColumTot; k++) {
             //guarda totalizador para utilizar depois
             totLinhaParcial = totLinhaParcial + data.getValue(y, k);
         }
@@ -97,17 +103,8 @@ function drawDashboard() {
         //zera vetor antes de entrar no laço
         aggColumns = [];
 
-        //insere a coluna do totalizador, pois será a primeira após o cabecalho
-        //insere os dados no vetor
-        aggColumns.push({
-            column: positioColumTot,
-            type: 'number',
-            label: data.getColumnLabel(positioColumTot),
-            aggregation: google.visualization.data.sum
-        });
-
         //cria todas as colunas começando da 2 até a penultima, pois a ultima é totalizador
-        for (var k = 7; k < positioColumTot; k++) {
+        for (var k = indexStartAgrupamento; k < positioColumTot; k++) {
             //insere os dados no vetor
             aggColumns.push({
                 column: k,
@@ -117,18 +114,30 @@ function drawDashboard() {
             });
         }
 
+        //insere a coluna do totalizador, pois será a primeira após o cabecalho
+        //insere os dados no vetor
+        aggColumns.push({
+            column: positioColumTot,
+            type: 'number',
+            label: data.getColumnLabel(positioColumTot),
+            aggregation: google.visualization.data.sum
+        });
+
+
+
         //define que para coluna zero "[0]", trazer as colunas 2 e 3 somadas
-        var catGroup = google.visualization.data.group(dt, [5, 6], aggColumns);
+        var catGroup = google.visualization.data.group(dt, indexColunasAgrupamento, aggColumns);
 
         //seta para a coluna total, a class bold-font
-        catGroup.setColumnProperty(2, 'className', 'bold-font');
+        catGroup.setColumnProperty(indexColunasAgrupamento.length + (aggColumns.length - 1), 'className', 'bold-font');
 
         //seta para a coluna Evento, a class width-300px
         //catGroup.setColumnProperty(1, 'className', 'width-300px');
 
 
         //aplica formato criado anteriormente para totadas colunas number ((data.getNumberOfColumns())-2) por conta do agrupamento
-        for (var k = 2; k < ((data.getNumberOfColumns()) - 5); k++) {
+        let max = indexColunasAgrupamento.length + aggColumns.length;
+        for (var k = indexColunasAgrupamento.length; k < max; k++) {
             formatter.format(catGroup, k);
         }
 

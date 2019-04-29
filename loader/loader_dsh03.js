@@ -91,7 +91,6 @@ function drawDashboard() {
 
         //zera vetor antes de entrar no laço
         aggColumns = [];
-        console.log('FFF', filter);
 
         //cria todas as colunas começando da 2 até a ultima
         for (var k = 4; k < data.getNumberOfColumns(); k++) {

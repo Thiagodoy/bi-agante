@@ -13,6 +13,12 @@ function drawDashboard() {
         async: false
     }).responseText;
 
+    // Parametrização
+    let indexColunaAgrupamento = 4;
+    let colunasAgrupamento = [0, 1];
+    let indexColunaTotalizador = 2;
+
+
     // Create our data table out of JSON data loaded from server.
     var data = new google.visualization.DataTable(jsonData);
 
@@ -104,7 +110,7 @@ function drawDashboard() {
         });
 
         //cria todas as colunas começando da 2 até a penultima, pois a ultima é totalizador
-        for (var k = 4; k < positioColumTot; k++) {
+        for (var k = indexColunaAgrupamento; k < positioColumTot; k++) {
             //insere os dados no vetor
             aggColumns.push({
                 column: k,
@@ -114,8 +120,9 @@ function drawDashboard() {
             });
         }
 
+
         //define que para coluna zero "[0]", trazer as colunas 2 e 3 somadas
-        var catGroup = google.visualization.data.group(dt, [0, 1], aggColumns);
+        var catGroup = google.visualization.data.group(dt, colunasAgrupamento, aggColumns);
 
         //tratativas para definir linha de TOTALIZADOR        
         //add uma linha a tabela criada a pouco
@@ -134,7 +141,7 @@ function drawDashboard() {
         }
 
         //antes de calcular o total, insere a primeira linha como 0 para todas as colunas
-        for (var k = 2; k < qtdcolumns_catGroup; k++) {
+        for (var k = indexColunaTotalizador; k < qtdcolumns_catGroup; k++) {
             catGroup.setCell(0, k, 0);
         }
 
@@ -145,7 +152,7 @@ function drawDashboard() {
         catGroup.setCell(0, 3, "");
 
         //passando pelas colunas começando da coluna 5 (zero é a primeira)
-        for (var k = 2; k < qtdcolumns_catGroup; k++) {
+        for (var k = indexColunaTotalizador; k < qtdcolumns_catGroup; k++) {
             //zera variavel parcial antes de entrar no for
             var totColunaParcial = 0;
             //passando por todas as linhas começando pela primeira
@@ -159,12 +166,11 @@ function drawDashboard() {
         //seta para a linha total, a class bold-font
         catGroup.setRowProperty(0, 'className', 'bold-font');
 
-
         //seta para a coluna total, a class bold-font
         catGroup.setColumnProperty(2, 'className', 'bold-font');
 
         //aplica formato criado anteriormente para totadas colunas number ((data.getNumberOfColumns())-2) por conta do agrupamento
-        for (var k = 2; k < ((data.getNumberOfColumns()) - 2); k++) {
+        for (var k = indexColunaTotalizador; k < ((data.getNumberOfColumns()) - 2); k++) {
             formatter.format(catGroup, k);
         }
 
@@ -204,17 +210,19 @@ function drawDashboard() {
 
             //se foi filtrado algum evento, executa grafico detalhado
             if (empresa_filtrado != '' && estab_filtrado != '') {
-                //verifica se foi filtrado algo em categoryPicker_Empresa
-                var state_FilterEmpresa = categoryPicker_Empresa.getState();
+
+
+                var state_FilterEmpresa = filter.filters.find(f => f.gv == 'categoryPicker_Empresa_div').getState();
                 state_FilterEmpresa = state_FilterEmpresa.selectedValues;
 
                 //verifica se foi filtrado algo em categoryPicker_Estabelecimento
-                var state_FilterEstabelecimento = categoryPicker_Estabelecimento.getState();
+                var state_FilterEstabelecimento = filter.filters.find(f => f.gv == 'categoryPicker_Estabelecimento_div').getState();
                 state_FilterEstabelecimento = state_FilterEstabelecimento.selectedValues;
 
                 //verifica se foi filtrado algo em categoryPicker que é Evento
-                var state_FilterEvento = categoryPicker.getState();
+                var state_FilterEvento = filter.filters.find(f => f.gv == 'categoryPicker_div').getState();
                 state_FilterEvento = state_FilterEvento.selectedValues;
+
 
                 //executa função de grafico detalhado
                 enviaFormGraficoDetalhado(empresa_filtrado, estab_filtrado, state_FilterEmpresa, state_FilterEstabelecimento, state_FilterEvento);
