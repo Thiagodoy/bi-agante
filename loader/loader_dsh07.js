@@ -13,6 +13,12 @@ function drawDashboard() {
         async: false
     }).responseText;
 
+
+    // Parametrização
+    let indexColunaAgrupamento = 4;
+    let colunasAgrupamento = [1];
+    let indexColunaValores = 1;
+
     // Create our data table out of JSON data loaded from server.
     var data = new google.visualization.DataTable(jsonData);
 
@@ -97,7 +103,7 @@ function drawDashboard() {
         aggColumns = [];
 
         //cria todas as colunas começando da 3 até a penultima, pois a ultima é totalizador
-        for (var k = 4; k < positioColumTot; k++) {
+        for (var k = indexColunaAgrupamento; k < positioColumTot; k++) {
             //insere os dados no vetor
             aggColumns.push({
                 column: k,
@@ -108,7 +114,7 @@ function drawDashboard() {
         }
 
         //define que para coluna zero "[0]", trazer as colunas 2 e 3 somadas
-        var catGroup = google.visualization.data.group(dt, [1], aggColumns);
+        var catGroup = google.visualization.data.group(dt, colunasAgrupamento, aggColumns);
 
 
         //seta tabela a ser utilizada pelo tableChart e executa draw
@@ -207,13 +213,13 @@ function drawDashboard() {
             dt02.addRows((dt.getNumberOfColumns() - 1));
 
             //adicionando a primeira coluna
-            for (var y = 1; y < dt.getNumberOfColumns(); y++) {
+            for (var y = indexColunaValores; y < dt.getNumberOfColumns(); y++) {
                 //inverte linha e coluna para transpor tabela
                 dt02.setCell((y - 1), 0, dt.getColumnLabel(y, 0)); //dt.getValue(0, y)); //comando: setCell(linha, coluna, valor). (y-1) por que o cab já foi add
             }
 
             //passando por coluna (iniiando da 2 pois a primeira é o cab) primeiro e depois por linha adicionando valores
-            for (var y = 1; y < dt.getNumberOfColumns(); y++) {
+            for (var y = indexColunaValores; y < dt.getNumberOfColumns(); y++) {
                 for (var k = 0; k < dt.getNumberOfRows(); k++) {
                     //inverte linha e coluna para transpor tabela
                     dt02.setCell((y - 1), (k + 1), dt.getValue(k, y)); //comando: setCell(linha, coluna, valor). (y-1) por que o cab já foi add
@@ -221,7 +227,7 @@ function drawDashboard() {
             }
 
             //aplica formato criado anteriormente para totadas colunas number
-            for (var k = 1; k < dt02.getNumberOfColumns(); k++) {
+            for (var k = indexColunaValores; k < dt02.getNumberOfColumns(); k++) {
                 formatter.format(dt02, k);
             }
 

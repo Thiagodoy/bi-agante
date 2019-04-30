@@ -13,6 +13,11 @@ function drawDashboard() {
         async: false
     }).responseText;
 
+    //Parametrizações
+    let indexStartAgrupamento = 4;
+    let indexColunasAgrupamento = [0, 1];
+    let indexColunaTotalizador = 2
+
     // Create our data table out of JSON data loaded from server.
     var data = new google.visualization.DataTable(jsonData);
 
@@ -105,7 +110,7 @@ function drawDashboard() {
         });
 
         //cria todas as colunas começando da 2 até a penultima, pois a ultima é totalizador
-        for (var k = 4; k < positioColumTot; k++) {
+        for (var k = indexStartAgrupamento; k < positioColumTot; k++) {
             //insere os dados no vetor
             aggColumns.push({
                 column: k,
@@ -116,7 +121,7 @@ function drawDashboard() {
         }
 
         //define que para coluna zero "[0]", trazer as colunas 2 e 3 somadas
-        var catGroup = google.visualization.data.group(dt, [0, 1], aggColumns);
+        var catGroup = google.visualization.data.group(dt, indexColunasAgrupamento, aggColumns);
 
         //tratativas para definir linha de TOTALIZADOR        
         //add uma linha a tabela criada a pouco
@@ -146,7 +151,7 @@ function drawDashboard() {
         catGroup.setCell(0, 3, "");
 
         //passando pelas colunas começando da coluna 5 (zero é a primeira)
-        for (var k = 2; k < qtdcolumns_catGroup; k++) {
+        for (var k = indexColunaTotalizador; k < qtdcolumns_catGroup; k++) {
             //zera variavel parcial antes de entrar no for
             var totColunaParcial = 0;
             //passando por todas as linhas começando pela primeira
@@ -165,7 +170,7 @@ function drawDashboard() {
         catGroup.setColumnProperty(2, 'className', 'bold-font');
 
         //aplica formato criado anteriormente para totadas colunas number ((data.getNumberOfColumns())-2) por conta do agrupamento
-        for (var k = 2; k < ((data.getNumberOfColumns()) - 2); k++) {
+        for (var k = indexColunaTotalizador; k < ((data.getNumberOfColumns()) - 2); k++) {
             formatterHours.format(catGroup, k);
         }
 
