@@ -84,12 +84,6 @@ function drawDashboard() {
         }
     });
 
-
-    // || COLUNAS SEM FILTRO || COLUNAS COM FILTRO || COLUNAS AGRUPAMENTO ||
-    // ||    |1|2|3|4|5|6|   ||     |7|8|9|10|11|  ||   |12|13|14|15|16|  ||
-    // lastIndexFilter => indica a posição do ultimo filtro para iniciarmos 
-
-
     //utiliza a tabela "tableChart_geral" como tabela mãe e cria tabela de agrupamento 
     google.visualization.events.addListener(tableChart_geral, 'ready', function() {
         var dt = tableChart_geral.getDataTable();
@@ -307,13 +301,16 @@ function drawDashboard() {
 
             //se foi filtrado algum evento, executa grafico detalhado
             if (evento_filtrado != '') {
-                //verifica se foi filtrado algo em categoryPicker_Empresa
-                var state_FilterEmpresa = categoryPicker_Empresa.getState();
+
+
+                var state_FilterEmpresa = filter.filters.find(f => f.gv == 'categoryPicker_Empresa_div').getState();
                 state_FilterEmpresa = state_FilterEmpresa.selectedValues;
 
                 //verifica se foi filtrado algo em categoryPicker_Estabelecimento
-                var state_FilterEstabelecimento = categoryPicker_Estabelecimento.getState();
+                var state_FilterEstabelecimento = filter.filters.find(f => f.gv == 'categoryPicker_Estabelecimento_div').getState();
                 state_FilterEstabelecimento = state_FilterEstabelecimento.selectedValues;
+
+
 
                 //executa função de grafico detalhado
                 enviaFormGraficoDetalhado(evento_filtrado, state_FilterEmpresa, state_FilterEstabelecimento);
