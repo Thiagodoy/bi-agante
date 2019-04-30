@@ -13,6 +13,11 @@ function drawDashboard() {
         async: false
     }).responseText;
 
+    // Parametrização
+    let indexColunaAgrupamento = 4;
+    let colunasAgrupamento = [2, 3];
+    let indexColunaFormatador = 2;
+
     // Create our data table out of JSON data loaded from server.
     var data = new google.visualization.DataTable(jsonData);
 
@@ -93,7 +98,7 @@ function drawDashboard() {
         aggColumns = [];
 
         //cria todas as colunas começando da 2 até a ultima
-        for (var k = 4; k < data.getNumberOfColumns(); k++) {
+        for (var k = indexColunaAgrupamento; k < data.getNumberOfColumns(); k++) {
             //insere os dados no vetor
             aggColumns.push({
                 column: k,
@@ -104,7 +109,7 @@ function drawDashboard() {
         }
 
         //define que para coluna zero "[0]", trazer as colunas 2 e 3 somadas
-        var catGroup = google.visualization.data.group(dt, [2, 3], aggColumns);
+        var catGroup = google.visualization.data.group(dt, colunasAgrupamento, aggColumns);
 
         //add novas colunas calculadas
         catGroup.addColumn('number', 'Variação');
@@ -136,7 +141,7 @@ function drawDashboard() {
 
 
         //aplica formato criado anteriormente para totadas exeto a ultima pois é %
-        for (var k = 2; k < ((data.getNumberOfColumns()) - 1); k++) {
+        for (var k = indexColunaFormatador; k < ((data.getNumberOfColumns()) - 1); k++) {
             formatter.format(catGroup, k);
         }
 
