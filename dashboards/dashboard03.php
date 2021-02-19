@@ -7,8 +7,8 @@
     <script type="text/javascript" src="core/loader/loader_dsh03_detalhado.js"></script> 
 
 
-    <div class="col-md-12" id="filters-container">
-        <!-- <table border="0" style="font-size: 13px;">
+    <div class="col-md-12 " >
+    <table border="0" style="font-size: 13px;">
             <tr style="vertical-align: top;">
                 <td>
                     <div id="categoryPicker_Empresa_div" onclick="AddCss_charts_menu_vertical();"></div>
@@ -17,19 +17,19 @@
                     <div id="categoryPicker_Estabelecimento_div" onclick="AddCss_charts_menu_vertical();"></div>
                 </td>
                 <td>
+                    <div id="categoryPicker_div" onclick="AddCss_charts_menu_vertical();"></div>
+                </td>
+                <td>
                     <div id="categoryPicker_Unidade_negocio_div" onclick="AddCss_charts_menu_vertical();"></div>
                 </td>
                 <td>
                     <div id="categoryPicker_Tipo_mob_div" onclick="AddCss_charts_menu_vertical();"></div>
                 </td>
-                <td style="max-width: 185px;">
+                <td>
                     <div id="categoryPicker_Centrodecusto_div" onclick="AddCss_charts_menu_vertical();"></div>
                 </td>
-                <td>
-                    <div id="categoryPicker_div" onclick="AddCss_charts_menu_vertical();"></div>
-                </td>
             </tr>
-        </table> -->        
+        </table>
     </div> 
     
 

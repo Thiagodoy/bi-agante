@@ -4,20 +4,29 @@
 <script type="text/javascript" src="core/js/filter-factory.js"></script> 
 <script type="text/javascript" src="core/loader/loader_dsh08.js"></script>
 
-<div class="col-md-12" id="filters-container">
-    <!-- <table border="0" style="font-size: 13px;">
-        <tr style="vertical-align: top;">
-            <td>
-                <div id="categoryPicker_Empresa_div" onclick="AddCss_charts_menu_vertical();"></div>
-            </td>
-            <td>
-                <div id="categoryPicker_Estabelecimento_div" onclick="AddCss_charts_menu_vertical();"></div>
-            </td>
-            <td>
-                <div id="categoryPicker_div" onclick="AddCss_charts_menu_vertical();"></div>
-            </td>
-        </tr>
-    </table> -->
+<div class="col-md-12" >
+        <table border="0" style="font-size: 13px;">
+            <tr style="vertical-align: top;">
+                <td>
+                    <div id="categoryPicker_Empresa_div" onclick="AddCss_charts_menu_vertical();"></div>
+                </td>
+                <td>
+                    <div id="categoryPicker_Estabelecimento_div" onclick="AddCss_charts_menu_vertical();"></div>
+                </td>
+                <td>
+                    <div id="categoryPicker_div" onclick="AddCss_charts_menu_vertical();"></div>
+                </td>
+                <td>
+                    <div id="categoryPicker_Unidade_negocio_div" onclick="AddCss_charts_menu_vertical();"></div>
+                </td>
+                <td>
+                    <div id="categoryPicker_Tipo_mob_div" onclick="AddCss_charts_menu_vertical();"></div>
+                </td>
+                <td>
+                    <div id="categoryPicker_Centrodecusto_div" onclick="AddCss_charts_menu_vertical();"></div>
+                </td>
+            </tr>
+        </table>
 </div>
 <div class="col-md-8" style="padding: 0;">
     <div class="col-md-6 col-xs-8">

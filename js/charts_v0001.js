@@ -40,8 +40,8 @@ function LimpaChart(functionenviada) {
     setTimeout(functionenviada, 500);
 
     //Limpa todos oas filtros adicinados dinamicamente
-    $('.control').remove();
-    controls = [];
+    // $('.control').remove();
+    // controls = [];
 
     $('#btn-show-hide-filter')
         .find('span')
